@@ -8,7 +8,7 @@ ORM(python : Object Relational Mapping)
 ue4 blueprint
 qt
 
-@sample:
+@sample: https://github.com/zozoiiiiii/cppreflection
 @time:      2018-1-8
 */
 /************************************************************************/
