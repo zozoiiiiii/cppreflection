@@ -1,17 +1,15 @@
 
 # how to use:
 
-/////
-struct Point
-{
-    YY_BEGIN(Point, "");
-    YY_FIELD(&Point::x, "x", "");
-    YY_END;
+	struct Point
+	{
+		YY_BEGIN(Point, "");
+		YY_FIELD(&Point::x, "x", "");
+		YY_END;
 
-    float x;
-    float y;
-};
-/////
+		float x;
+		float y;
+	};
 
 
 # help url:
