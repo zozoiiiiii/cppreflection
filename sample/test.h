@@ -20,7 +20,7 @@ struct Point
     float y;
 };
 
-YY_TYPEHELPER(Point, YVTYPE_CLASS);
+YY_TYPEHELPER(Point, YVT_CLASS);
 
 class Test
 {

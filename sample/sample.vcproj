@@ -193,7 +193,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\reflection\yy_var.h"
+				RelativePath="..\reflection\yy_type.h"
+				>
+			</File>
+			<File
+				RelativePath="..\reflection\yy_var_helper.h"
 				>
 			</File>
 		</Filter>
