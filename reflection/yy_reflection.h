@@ -28,10 +28,10 @@ public:                                                            \
     static MetaClass* MetaClassInstance()                          \
     {                                                              \
         static MetaClass s_MetaClass;                              \
-		s_MetaClass.m_name = #cls;                                 \
-		s_MetaClass.m_parent = parent_;                            \
-        s_MetaClass.m_createCallBack = &Create_##cls;              \
-        s_MetaClass.m_destroyCallBack = &Destroy_##cls;            \
+		s_MetaClass.name = #cls;                                 \
+		s_MetaClass.parent = parent_;                            \
+        s_MetaClass.create_func = &Create_##cls;              \
+        s_MetaClass.destroy_func = &Destroy_##cls;            \
         MetaField* pField = NULL; \
         MetaMethod* pMethod = NULL;
 
@@ -42,20 +42,20 @@ public:                                                            \
     static MetaClass* MetaClassInstance()                          \
     {                                                              \
         static MetaClass s_MetaClass;                              \
-        s_MetaClass.m_name = #cls;                                 \
-        s_MetaClass.m_parent = parent_;                            \
+        s_MetaClass.name = #cls;                                 \
+        s_MetaClass.parent = parent_;                            \
         MetaField* pField = NULL;                                  \
         MetaMethod* pMethod = NULL;
 
 
 #define YY_FIELD(field_, name_, extension_)                        \
     pField = MakeField(field_);                                    \
-    pField->m_strExtension = extension_;                           \
-	pField->m_strName = name_;                                     \
-    s_MetaClass.m_fields[pField->m_strName] = pField;
+    pField->desc = extension_;                           \
+	pField->name = name_;                                     \
+    s_MetaClass.fields[pField->name] = pField;
 
 #define YY_METHOD(method_, name_, extension_)                      \
     pMethod = MakeMethod(method_);                                 \
-    pMethod->m_strName = name_;                                    \
-    pMethod->m_strExtension = extension_;                          \
-    s_MetaClass.m_methods[pMethod->m_strName] = pMethod;
+    pMethod->name = name_;                                    \
+    pMethod->desc = extension_;                          \
+    s_MetaClass.methods[pMethod->name] = pMethod;

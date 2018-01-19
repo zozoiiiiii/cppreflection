@@ -39,10 +39,10 @@ public:
     {
         this->f = f;
         Param param0;
-        param0.nType = VarHelper<__P1>::GetType();
+        param0.var_type = VarHelper<__P1>::GetType();
         param0.isOut = VarHelper<__P1>::IsOut();
         param0.flag = VarHelper<__P1>::GetFlag();
-        m_params.push_back(param0);
+        params.push_back(param0);
     }
 
     virtual void Invoke(void*, void* obj, void* parameters[]){
@@ -60,18 +60,18 @@ public:
     Method2_Void(fptr f)
     {
         this->f = f;
-        m_return.nType = VarHelper<void>::GetType();
+        returnParam.var_type = VarHelper<void>::GetType();
         Param param0;
-        param0.nType = VarHelper<__P1>::GetType();
+        param0.var_type = VarHelper<__P1>::GetType();
         param0.isOut = VarHelper<__P1>::IsOut();
         param0.flag = VarHelper<__P1>::GetFlag();
-        m_params.push_back(param0);
+        params.push_back(param0);
 
         Param param1;
-        param1.nType = VarHelper<__P2>::GetType();
+        param1.var_type = VarHelper<__P2>::GetType();
         param1.isOut = VarHelper<__P2>::IsOut();
         param1.flag = VarHelper<__P2>::GetFlag();
-        m_params.push_back(param1);
+        params.push_back(param1);
     }
 
     virtual void Invoke(void*, void* obj, void* parameters[]){
@@ -91,25 +91,25 @@ public:
     Method3_Void(fptr f)
     {
         this->f = f;
-        m_return.nType = VarHelper<void>::GetType();
+        returnParam.var_type = VarHelper<void>::GetType();
         Param param0;
-        param0.nType = VarHelper<__P1>::GetType();
+        param0.var_type = VarHelper<__P1>::GetType();
         param0.isOut = VarHelper<__P1>::IsOut();
         param0.flag = VarHelper<__P1>::GetFlag();
-        m_params.push_back(param0);
+        params.push_back(param0);
 
         Param param1;
-        param1.nType = VarHelper<__P2>::GetType();
+        param1.var_type = VarHelper<__P2>::GetType();
         param1.isOut = VarHelper<__P2>::IsOut();
         param1.flag = VarHelper<__P2>::GetFlag();
-        m_params.push_back(param1);
+        params.push_back(param1);
 
 
         Param param2;
-        param2.nType = VarHelper<__P3>::GetType();
+        param2.var_type = VarHelper<__P3>::GetType();
         param2.isOut = VarHelper<__P3>::IsOut();
         param2.flag = VarHelper<__P3>::GetFlag();
-        m_params.push_back(param2);
+        params.push_back(param2);
     }
 
     virtual void Invoke(void*, void* obj, void* parameters[]){
@@ -130,31 +130,31 @@ public:
     Method4_Void(fptr f)
     {
         this->f = f;
-        m_return.nType = VarHelper<void>::GetType();
+        returnParam.var_type = VarHelper<void>::GetType();
         Param param0;
-        param0.nType = VarHelper<__P1>::GetType();
+        param0.var_type = VarHelper<__P1>::GetType();
         param0.isOut = VarHelper<__P1>::IsOut();
         param0.flag = VarHelper<__P1>::GetFlag();
-        m_params.push_back(param0);
+        params.push_back(param0);
 
         Param param1;
-        param1.nType = VarHelper<__P2>::GetType();
+        param1.var_type = VarHelper<__P2>::GetType();
         param1.isOut = VarHelper<__P2>::IsOut();
         param1.flag = VarHelper<__P2>::GetFlag();
-        m_params.push_back(param1);
+        params.push_back(param1);
 
 
         Param param2;
-        param2.nType = VarHelper<__P3>::GetType();
+        param2.var_type = VarHelper<__P3>::GetType();
         param2.isOut = VarHelper<__P3>::IsOut();
         param2.flag = VarHelper<__P3>::GetFlag();
-        m_params.push_back(param2);
+        params.push_back(param2);
 
         Param param3;
-        param3.nType = VarHelper<__P4>::GetType();
+        param3.var_type = VarHelper<__P4>::GetType();
         param3.isOut = VarHelper<__P4>::IsOut();
         param3.flag = VarHelper<__P4>::GetFlag();
-        m_params.push_back(param3);
+        params.push_back(param3);
     }
 
     virtual void Invoke(void*, void* obj, void* parameters[]){

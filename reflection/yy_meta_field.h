@@ -18,12 +18,12 @@ struct MetaField
 {
     virtual ~MetaField(){}
     virtual void Set(void* obj, const void* value) const = 0;//{assert(false);}
-    virtual void* Get(void* obj) = 0;// {assert(false); return NULL;}
+    virtual void* Get(void* obj) const = 0;// {assert(false); return NULL;}
 
-    std::string m_strName;
-    std::string m_strExtension;
-    std::string m_strTypeName;
-    int m_nType;
+    std::string name;
+    std::string desc;
+    int var_type;
+    std::string type_name;  // class name
 };
 
 template<class ClassType, class FieldType>
@@ -32,7 +32,7 @@ class MetaMemberField : public MetaField
 public:
     MetaMemberField(FieldType ClassType::* field);
     virtual void Set(void* obj, const void* value) const;
-    virtual void* Get(void* obj);
+    virtual void* Get(void* obj) const;
 
 private:
     typedef  FieldType ClassType::*fptr;
@@ -43,8 +43,8 @@ template<class ClassType, class FieldType>
 MetaMemberField<ClassType, FieldType>::MetaMemberField(FieldType ClassType::* field)
 {
     this->f = field;
-    m_nType = VarHelper<FieldType>::GetType();
-    m_strTypeName = VarHelper<FieldType>::GetTypeName();
+    var_type = VarHelper<FieldType>::GetType();
+    type_name = VarHelper<FieldType>::GetTypeName();
 }
 
 
@@ -59,7 +59,7 @@ void MetaMemberField<ClassType, FieldType>::Set(void* obj, const void* value) co
 //     }
 
 template<class ClassType, class FieldType>
-void* MetaMemberField<ClassType, FieldType>::Get(void* obj)
+void* MetaMemberField<ClassType, FieldType>::Get(void* obj) const
 {
     return &(((ClassType*)obj)->*f);
 }

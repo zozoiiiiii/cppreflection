@@ -23,11 +23,11 @@ struct MetaClass
     typedef void* (*CB_Create)();
     typedef void(*CB_Destroy)(void* ptr);
 
-    CB_Create m_createCallBack;
-    CB_Destroy m_destroyCallBack;
-    std::string m_name;
-    std::string m_parent;
-    std::map<std::string, MetaMethod*> m_methods;
-    std::map<std::string, MetaField*> m_fields;
+    CB_Create create_func;
+    CB_Destroy destroy_func;
+    std::string name;
+    std::string parent;
+    std::map<std::string, MetaMethod*> methods;
+    std::map<std::string, MetaField*> fields;
 };
 
