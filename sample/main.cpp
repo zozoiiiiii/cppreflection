@@ -6,7 +6,7 @@ int main()
     // test1
     {
       MetaClass* pMetaClass_Vec2Test = Point::MetaClassInstance();
-      MetaField* pMetaField = pMetaClass_Vec2Test->m_fields["x"];
+      MetaField* pMetaField = pMetaClass_Vec2Test->fields["x"];
 
       Point vt;
       vt.x = 1.0f;
@@ -18,7 +18,7 @@ int main()
     // test2
     {
       MetaClass* pMetaClass_Test = Test::MetaClassInstance();
-      MetaField* pMetaField = pMetaClass_Test->m_fields["position"];
+      MetaField* pMetaField = pMetaClass_Test->fields["position"];
 
       // field
       Test tt;
@@ -27,7 +27,7 @@ int main()
       bb.x=1.0f;
       pMetaField->Set(&tt, &bb);
 
-      MetaMethod* pMetaMethod = pMetaClass_Test->m_methods["Set"];
+      MetaMethod* pMetaMethod = pMetaClass_Test->methods["Set"];
       float result;
 
       // method
